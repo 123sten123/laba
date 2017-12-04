@@ -8,6 +8,7 @@ using System.Net;
 
 public class HttpClient
 {
+    //todo: host, port уберите из параметров методов
     public bool Ping(string host, int port)
     {
         HttpStatusCode status;
@@ -31,6 +32,7 @@ public class HttpClient
         Request("POST", host, port, "WriteAnswer", out status, outData);
     }
 
+    //todo: выделите базовый класс, и уберите туда этот метод
     private byte[] Request(string type, string host, int port, string method, out HttpStatusCode status, byte[] data = null)
     {
         UriBuilder builder = new UriBuilder();
